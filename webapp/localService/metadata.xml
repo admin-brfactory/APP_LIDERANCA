@@ -1,0 +1,79 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZGEEHSW_LIDERANCA_AREA_SRV" xml:lang="pt" sap:schema-version="1">
+            <EntityType Name="GET_GRUPOS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DATA_INI"/>
+                    <PropertyRef Name="DATA_FIM"/>
+                    <PropertyRef Name="MATRICULA"/>
+                    <PropertyRef Name="LOCAL"/>
+                </Key>
+                <Property Name="DATA_INI" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data início" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DATA_FIM" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Fim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MATRICULA" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Matricula" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LOCAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Local" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NOME" Type="Edm.String" sap:unicode="false" sap:label="Nome" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TAB_GRUPOS" Type="Edm.String" sap:unicode="false" sap:label="Tabelas de Grupos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="GET_LISTA_LOCAIS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="USUARIO"/>
+                </Key>
+                <Property Name="USUARIO" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LISTA_LOCAIS" Type="Edm.String" sap:unicode="false" sap:label="Lista Locais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="GET_DADOS_RELATORIO" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DATA"/>
+                    <PropertyRef Name="LOCAL"/>
+                    <PropertyRef Name="GRUPO"/>
+                </Key>
+                <Property Name="DATA" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LOCAL" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Local" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GRUPO" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Grupo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LISTA_PARTICIPANTES" Type="Edm.String" sap:unicode="false" sap:label="Lista Participantes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LISTA_PRIORI_TEMAS" Type="Edm.String" sap:unicode="false" sap:label="Lista de Temas Prioritários" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LISTA_ITENS_VERIFI" Type="Edm.String" sap:unicode="false" sap:label="Lista de Itens Verificados" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RELATAR_PONTOS_RELEVAN" Type="Edm.String" sap:unicode="false" sap:label="Relatar Pontos Relevantes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LINK_PORTAL_SEG" Type="Edm.String" sap:unicode="false" sap:label="Link Portal Comportamento Seguro" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="N_ANOMALIA" Type="Edm.String" sap:unicode="false" sap:label="Numero da Anomalia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="N_ABORDAGEM" Type="Edm.String" sap:unicode="false" sap:label="Numero da Abordagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LINK_ANOMALIA" Type="Edm.String" sap:unicode="false" sap:label="Link Anomalia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LINK_ABORDAGEM" Type="Edm.String" sap:unicode="false" sap:label="Link Abordagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="GRAVAR_DADOS_RELATORIO" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TAB_DADOS"/>
+                    <PropertyRef Name="USUARIO"/>
+                </Key>
+                <Property Name="TAB_DADOS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Tabelas de Dados" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="USUARIO" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TAB_MENSAGEM" Type="Edm.String" sap:unicode="false" sap:label="Tabela de Mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="REALIZAR_DADOS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TAB_DADOS"/>
+                    <PropertyRef Name="USUARIO"/>
+                </Key>
+                <Property Name="TAB_DADOS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Tabelas de Dados" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="USUARIO" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TAB_MENSAGEM" Type="Edm.String" sap:unicode="false" sap:label="Tabela de Mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGEEHSW_LIDERANCA_AREA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="GET_GRUPOSSet" EntityType="ZGEEHSW_LIDERANCA_AREA_SRV.GET_GRUPOS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="GET_LISTA_LOCAISSet" EntityType="ZGEEHSW_LIDERANCA_AREA_SRV.GET_LISTA_LOCAIS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="GET_DADOS_RELATORIOSet" EntityType="ZGEEHSW_LIDERANCA_AREA_SRV.GET_DADOS_RELATORIO" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="GRAVAR_DADOS_RELATORIOSet" EntityType="ZGEEHSW_LIDERANCA_AREA_SRV.GRAVAR_DADOS_RELATORIO" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="REALIZAR_DADOSSet" EntityType="ZGEEHSW_LIDERANCA_AREA_SRV.REALIZAR_DADOS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/opu/odata/sap/ZGEEHSW_LIDERANCA_AREA_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/opu/odata/sap/ZGEEHSW_LIDERANCA_AREA_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
