@@ -489,11 +489,97 @@ sap.ui.define([
 				USUARIO: usuario
 			};
 
-			MessageBox.confirm("Ao marcar como realizado não será possível modicações. Deseja continuar?", {
+			MessageBox.confirm("Deseja marcar como realizados?", {
 				onClose: function(oAction) {
 					if (oAction == "OK") {
 						sap.ui.core.BusyIndicator.show();
 						oModel.create("/REALIZAR_DADOSSet", oEntry, {
+
+							success: function(oData) {
+								sap.ui.core.BusyIndicator.hide();
+
+								if (oData.TAB_MENSAGEM) {
+									var checkError = false;
+									var oMensagem = JSON.parse(oData.TAB_MENSAGEM);
+
+									for (i in oMensagem) {
+										if (oMensagem[i].TYPE === "S") {
+											MessageBox.success(oMensagem[i].MESSAGE);
+										} else {
+											checkError = true;
+											MessageBox.error(oMensagem[i].MESSAGE);
+										}
+									}
+									if (checkError === false && CheckTipoView === false) {
+										oListTemasVerif.removeSelections();
+										this.getView().byId("idTable").getItems()[oTableItemNumber].firePress();
+									}
+
+									if (CheckTipoView === true) {
+										oListTemasVerif.removeSelections();
+										this.getRelatComParameter();
+									}
+								}
+
+							}.bind(this),
+
+							error: function(error) {
+								sap.ui.core.BusyIndicator.hide();
+								MessageBox.error("Ocorreu um erro inesperado ao salvar os dados, tente novamente.");
+							}.bind(this)
+
+						});
+					}
+				}.bind(this)
+			});
+		},
+
+		onEncerrar: function(sID) {
+			var oModel = this.getOwnerComponent().getModel();
+			var oViewModel = this.getView().getModel("CheckInView");
+			var oTableItemNumber = oViewModel.getProperty("/oTableItemNumber");
+			var usuario = sap.ushell.Container.getService("UserInfo").getId();
+			var ListTemas = oViewModel.getProperty("/ListTemas");
+			var ListParticipantes = oViewModel.getProperty("/ListParticipantes");
+			var AreaTexto = oViewModel.getProperty("/AreaText");
+			var ListTemasVerifBinding = oViewModel.getProperty("/ListTemasVerifcados");
+			var oListTemasVerif = this.getView().byId(sID);
+			var oListTemasVerifItems = oListTemasVerif.getItems();
+			var SelectedVerifItems = oListTemasVerif.getSelectedContextPaths();
+			var CheckTipoView = oViewModel.getProperty("/VisibleScreenComParameter");
+
+			if (SelectedVerifItems.length === 0) {
+				MessageBox.error("Necessário Selecionar pelo um item de verificação");
+				return;
+			}
+
+			for (var count in oListTemasVerifItems) {
+				if (oListTemasVerifItems[count].getSelected() === false) {
+					var oListBinding = oListTemasVerif.getBindingInfo("items").path;
+					var oPropertyValue = oViewModel.getProperty(oListBinding + "/" + count);
+					oPropertyValue.VALOR = "";
+				}
+			}
+
+			for (var i in SelectedVerifItems) {
+				var oItemSelected = oViewModel.getProperty(SelectedVerifItems[i]);
+
+				oItemSelected.VALOR = "X";
+			}
+
+			var oEntry = {
+				TEMAS_VERIFICADOS: JSON.stringify(ListTemasVerifBinding),
+				PONTOS_RELEVANTES: AreaTexto,
+				LISTA_PARTICIPANTES: JSON.stringify(ListParticipantes),
+				LISTA_TEMAS: JSON.stringify(ListTemas),
+				USUARIO: usuario
+			};
+
+			MessageBox.confirm("Ao marcar como encerrado não será possível modicações. Deseja continuar?", {
+				onClose: function(oAction) {
+					if (oAction == "OK") {
+						sap.ui.core.BusyIndicator.show();
+						oModel.create("/ENCERRARSet", oEntry, {
 
 							success: function(oData) {
 								sap.ui.core.BusyIndicator.hide();

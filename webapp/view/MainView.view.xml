@@ -126,8 +126,10 @@
 						<!--Buttom Gravar-->
 						<f:SimpleForm id="gravar" editable="false" layout="ResponsiveGridLayout">
 							<HBox>
+								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblEncerrar}" id="Encerrar"
+									press="onEncerrar('temasVerificados')" width="10rem" class="sapUiTinyMarginBeginEnd"/>
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizado"
-									press="onRealizar('temasVerificados')" width="10rem" class="sapUiTinyMarginEnd"/>
+									press="onRealizar('temasVerificados')" width="10rem"/>
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Gravar" press="onGravar('temasVerificados')"
 									width="10rem" class="sapUiTinyMarginBegin"/>
 							</HBox>
@@ -188,8 +190,10 @@
 					<!--Buttom Gravar-->
 					<f:SimpleForm id="grava" editable="false" layout="ResponsiveGridLayout">
 						<HBox>
+							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblEncerrar}" id="Encerra"
+								press="onEncerrar('temasVerificado')" width="10rem" class="sapUiTinyMarginBeginEnd"/>
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizad"
-								press="onRealizar('temasVerificado')" width="10rem" class="sapUiTinyMarginEnd"/>
+								press="onRealizar('temasVerificado')" width="10rem"/>
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Grava" press="onGravar('temasVerificado')"
 								width="10rem" class="sapUiTinyMarginBegin"/>
 						</HBox>
