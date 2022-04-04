@@ -44,6 +44,7 @@ sap.ui.define([
 				RelatorioVisible: false,
 				enableBtnRealizar: true,
 				enableBtnGravar: true,
+				enableBtnEncerrar: true,
 				enableTextArea: true,
 				TemasVerifMode: "MultiSelect",
 				tab_grupos: "",
@@ -101,12 +102,14 @@ sap.ui.define([
 					if (oData.IS_REALIZADO === "X") {
 						oViewModel.setProperty("/enableBtnRealizar", false);
 						oViewModel.setProperty("/enableBtnGravar", false);
+						oViewModel.setProperty("/enableBtnEncerrar", false);
 						oViewModel.setProperty("/enableTextArea", false);
 						oViewModel.setProperty("/VisibleCheckBoxItensVerifParam", true);
 						oViewModel.setProperty("/TemasVerifMode", "None");
 					} else {
 						oViewModel.setProperty("/enableBtnRealizar", true);
 						oViewModel.setProperty("/enableBtnGravar", true);
+						oViewModel.setProperty("/enableBtnEncerrar", true);
 						oViewModel.setProperty("/enableTextArea", true);
 						oViewModel.setProperty("/VisibleCheckBoxItensVerifParam", false);
 						oViewModel.setProperty("/TemasVerifMode", "MultiSelect");
@@ -182,11 +185,6 @@ sap.ui.define([
 			var Matricula = oViewModel.getProperty("/Matricula");
 			var Local = this.getView().byId("LocL").getSelectedKey();
 			var Periodo = this.getView().byId("Data").getDateValue();
-
-			if (Matricula === "") {
-				MessageBox.error("Favor preencher uma Matricula!");
-				return;
-			}
 
 			if (Periodo !== null && Periodo !== "") {
 				Periodo = Periodo.toLocaleDateString().substr(3);
@@ -285,12 +283,14 @@ sap.ui.define([
 					if (oData.IS_REALIZADO === "X") {
 						oViewModel.setProperty("/enableBtnRealizar", false);
 						oViewModel.setProperty("/enableBtnGravar", false);
+						oViewModel.setProperty("/enableBtnEncerrar", false);
 						oViewModel.setProperty("/enableTextArea", false);
 						oViewModel.setProperty("/VisibleCheckBoxItensVerif", true);
 						oViewModel.setProperty("/TemasVerifMode", "None");
 					} else {
 						oViewModel.setProperty("/enableBtnRealizar", true);
 						oViewModel.setProperty("/enableBtnGravar", true);
+						oViewModel.setProperty("/enableBtnEncerrar", true);
 						oViewModel.setProperty("/enableTextArea", true);
 						oViewModel.setProperty("/VisibleCheckBoxItensVerif", false);
 						oViewModel.setProperty("/TemasVerifMode", "MultiSelect");

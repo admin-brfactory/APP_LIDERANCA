@@ -15,7 +15,7 @@
 							</layoutData>
 						</VBox>
 						<VBox>
-							<Label required="true" text="{i18n>lblMatricula}"/>
+							<Label text="{i18n>lblMatricula}"/>
 							<Input id="matric" value="{CheckInView>/Matricula}" liveChange="checaNumerico('matric', '8')"/>
 							<layoutData>
 								<l:GridData span="XL2 L2 M2 S12"/>
@@ -124,15 +124,15 @@
 							<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" width="70%" height="10rem"/>
 						</f:SimpleForm>
 						<!--Buttom Gravar-->
-						<f:SimpleForm id="gravar" editable="false" layout="ResponsiveGridLayout">
-							<HBox>
-								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblEncerrar}" id="Encerrar"
-									press="onEncerrar('temasVerificados')" width="10rem" class="sapUiTinyMarginBeginEnd"/>
+						<f:SimpleForm id="gravar" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="6" emptySpanL="6" emptySpanM="6" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizado"
 									press="onRealizar('temasVerificados')" width="10rem"/>
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Gravar" press="onGravar('temasVerificados')"
-									width="10rem" class="sapUiTinyMarginBegin"/>
-							</HBox>
+									width="10rem"/>
+								<Button type="Emphasized" enabled="{CheckInView>/enableBtnEncerrar}" text="{i18n>lblEncerrar}" id="Encerrar"
+									press="onEncerrar('temasVerificados')" width="10rem"/>	
 						</f:SimpleForm>
 					</VBox>
 				</VBox>
@@ -188,15 +188,15 @@
 						<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" width="70%" height="10rem"/>
 					</f:SimpleForm>
 					<!--Buttom Gravar-->
-					<f:SimpleForm id="grava" editable="false" layout="ResponsiveGridLayout">
-						<HBox>
-							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblEncerrar}" id="Encerra"
-								press="onEncerrar('temasVerificado')" width="10rem" class="sapUiTinyMarginBeginEnd"/>
+					<f:SimpleForm id="grava" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="6" emptySpanL="6" emptySpanM="6" emptySpanS="0" columnsXL="1"
+						columnsL="1" columnsM="1" singleContainerFullSize="false">
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizad"
 								press="onRealizar('temasVerificado')" width="10rem"/>
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Grava" press="onGravar('temasVerificado')"
-								width="10rem" class="sapUiTinyMarginBegin"/>
-						</HBox>
+								width="10rem"/>
+							<Button type="Emphasized" enabled="{CheckInView>/enableBtnEncerrar}" text="{i18n>lblEncerrar}" id="Encerra"
+								press="onEncerrar('temasVerificado')" width="10rem"/>	
 					</f:SimpleForm>
 				</VBox>
 			</Page>
