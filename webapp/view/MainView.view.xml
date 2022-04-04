@@ -30,21 +30,21 @@
 						</VBox>
 						<VBox>
 							<Label text="{i18n>lblLocal}"/>
-							<Select enabled="{CheckInView>/SelectionGrupo}" forceSelection="false" items="{CheckInView>/ListLocais}" id="LocL">
+							<Select enabled="{CheckInView>/SelectionGrupo}" forceSelection="false" items="{CheckInView>/ListLocais}" id="LocL" width="100%">
 								<layoutData>
 									<l:GridData span="XL2 L2 M4 S12"/>
 								</layoutData>
 								<core:Item key="{CheckInView>CODLOCAL}" text="{CheckInView>ZLOCAL}"/>
 							</Select>
 							<layoutData>
-								<l:GridData span="XL1 L1 M1 S12"/>
+								<l:GridData span="XL2 L2 M2 S12"/>
 							</layoutData>
 						</VBox>
 						<VBox>
 							<Label text="{i18n>lblPesquisar}"/>
 							<Button icon="sap-icon://search" press="getTabelaDados" width="40%"/>
 							<layoutData>
-								<l:GridData span="XL2 L2 M2 S12"/>
+								<l:GridData span="XL1 L1 M1 S12"/>
 							</layoutData>
 						</VBox>
 					</l:Grid>
@@ -121,18 +121,17 @@
 						</f:SimpleForm>
 						<!--relatar-->
 						<f:SimpleForm id="relatar" layout="ResponsiveGridLayout" title="{i18n>Relatar}">
-							<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" width="70%" height="10rem"/>
+							<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" height="10rem"/>
 						</f:SimpleForm>
 						<!--Buttom Gravar-->
 						<f:SimpleForm id="gravar" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
 						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="6" emptySpanL="6" emptySpanM="6" emptySpanS="0" columnsXL="1"
 						columnsL="1" columnsM="1" singleContainerFullSize="false">
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizado"
-									press="onRealizar('temasVerificados')" width="10rem"/>
-								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Gravar" press="onGravar('temasVerificados')"
-									width="10rem"/>
+									press="onRealizar('temasVerificados')"/>
+								<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Gravar" press="onGravar('temasVerificados')"/>
 								<Button type="Emphasized" enabled="{CheckInView>/enableBtnEncerrar}" text="{i18n>lblEncerrar}" id="Encerrar"
-									press="onEncerrar('temasVerificados')" width="10rem"/>	
+									press="onEncerrar('temasVerificados')"/>	
 						</f:SimpleForm>
 					</VBox>
 				</VBox>
@@ -185,18 +184,17 @@
 					</f:SimpleForm>
 					<!--relatar-->
 					<f:SimpleForm id="relata" layout="ResponsiveGridLayout" title="{i18n>Relatar}">
-						<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" width="70%" height="10rem"/>
+						<TextArea enabled="{CheckInView>/enableTextArea}" value="{CheckInView>/AreaText}" maxLength="5000" height="10rem"/>
 					</f:SimpleForm>
 					<!--Buttom Gravar-->
 					<f:SimpleForm id="grava" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
 						labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="6" emptySpanL="6" emptySpanM="6" emptySpanS="0" columnsXL="1"
 						columnsL="1" columnsM="1" singleContainerFullSize="false">
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnRealizar}" text="{i18n>lblRealizado}" id="Realizad"
-								press="onRealizar('temasVerificado')" width="10rem"/>
-							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Grava" press="onGravar('temasVerificado')"
-								width="10rem"/>
+								press="onRealizar('temasVerificado')"/>
+							<Button type="Emphasized" enabled="{CheckInView>/enableBtnGravar}" text="{i18n>lblGravar}" id="Grava" press="onGravar('temasVerificado')"/>
 							<Button type="Emphasized" enabled="{CheckInView>/enableBtnEncerrar}" text="{i18n>lblEncerrar}" id="Encerra"
-								press="onEncerrar('temasVerificado')" width="10rem"/>	
+								press="onEncerrar('temasVerificado')"/>	
 					</f:SimpleForm>
 				</VBox>
 			</Page>
