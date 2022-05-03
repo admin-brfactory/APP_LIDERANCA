@@ -89,6 +89,7 @@
 						<!--TEMAS-->
 						<f:SimpleForm id="SimpleFormDisplay480_2120" editable="false" title="{i18n>Tem}">
 							<List id="assuntos" items="{CheckInView>/ListTemas}" width="30rem">
+								<!--mudar para width 100%-->
 								<items>
 									<StandardListItem title="{CheckInView>TEMA}"/>
 								</items>
@@ -109,6 +110,7 @@
 						<!--prioridadedetemas-->
 						<f:SimpleForm id="pritemas" editable="false" title="{i18n>Boxx}">
 							<List id="temasVerificados" mode="{CheckInView>/TemasVerifMode}" items="{CheckInView>/ListTemasVerifcados}" width="30rem">
+								<!--mudar para width 100%-->
 								<items>
 									<CustomListItem>
 										<l:HorizontalLayout>
